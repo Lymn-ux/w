@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Script Loader</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>Script Loader</h1>
+    <p class="sub">Tempel kode, dapatkan satu link loadstring. Tanpa akun.</p>
+  </header>
+
+  <ol class="steps" id="steps" aria-label="Langkah">
+    <li data-s="1" class="active"><span>1</span>Write</li>
+    <li data-s="2"><span>2</span>Generate</li>
+    <li data-s="3"><span>3</span>Protected</li>
+  </ol>
+
+  <section class="card">
+    <label for="name">Nama script</label>
+    <input id="name" type="text" maxlength="60" placeholder="Contoh: Auto Farm Hub" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+    <div class="hint">ID: <code id="slug">-</code></div>
+
+    <label for="code">Kode</label>
+    <textarea id="code" rows="12" placeholder="print('halo')" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" wrap="off"></textarea>
+    <div class="hint"><span id="size">0 KB</span> / 200 KB</div>
+
+    <div class="row">
+      <button id="submit" class="primary" type="button">Generate loader</button>
+      <button id="cancel" class="ghost" type="button" hidden>Batal edit</button>
+    </div>
+  </section>
+
+  <section class="card" id="result" hidden>
+    <label>Link</label>
+    <div class="copyline"><code id="link"></code><button class="ghost" data-copy="link" type="button">Copy</button></div>
+    <label>Snippet</label>
+    <div class="copyline"><code id="snip"></code><button class="ghost" data-copy="snip" type="button">Copy</button></div>
+    <div class="hint">Snippet sudah disalin otomatis.</div>
+  </section>
+
+  <section>
+    <h2>Your loaders</h2>
+    <div id="list" class="list"></div>
+  </section>
+</main>
+<div id="toast" role="status"></div>
+<script src="/app.js"></script>
+</body>
+</html>
